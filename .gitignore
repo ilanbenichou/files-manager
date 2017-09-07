@@ -1,0 +1,7 @@
+.classpath
+.project
+.settings/
+target/
+files-manager.log
+.DS_Store
+TODO.txt

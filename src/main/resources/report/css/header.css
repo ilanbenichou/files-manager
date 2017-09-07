@@ -1,0 +1,29 @@
+/* Header Section */
+#headerTitleContainer {
+	position: relative;
+	width: 100%;
+	color: black;
+	font-family: Oswald, "Trebuchet MS", Helvetica, sans-serif;
+	font-weight: 300;
+	text-align: center;
+}
+#headerTitleContainer>div {
+	display: table;
+	height: 100%;
+	margin: auto;
+}
+#headerTitleContainer>div>div {
+	display: table-cell;
+	vertical-align: middle;
+}
+#headerTitle {
+	width: 100%;
+	font-size: 15px;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	padding: 1% 20px;
+}
+#headerSubTitle {
+	font-size: 9px;
+}

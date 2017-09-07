@@ -1,0 +1,39 @@
+/* Media Queries */
+@media ( min-width : 480px) {
+	#headerTitle {
+		font-size: 18px;
+	}
+	#headerSubTitle {
+		font-size: 11px;
+	}
+}
+
+@media ( min-width : 768px) {
+	#headerTitle {
+		font-size: 22px;
+	}
+	#headerSubTitle {
+		font-size: 13px;
+	}
+	.c_section {
+		padding: 100px 30px;
+	}
+}
+
+@media ( min-width : 992px) {
+	#headerTitle {
+		font-size: 29px;
+	}
+	#headerSubTitle {
+		font-size: 16px;
+	}
+}
+
+@media ( min-width : 1200px) {
+	#headerTitle {
+		font-size: 35px;
+	}
+	#headerSubTitle {
+		font-size: 15px;
+	}
+}

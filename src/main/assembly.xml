@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd">
+
+	<id>dist</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<baseDirectory>files-manager</baseDirectory>
+
+	<fileSets>
+
+		<fileSet>
+			<directory>./</directory>
+			<includes>
+				<include>bin/files_manager.bat</include>
+				<include>bin/files_manager.sh</include>
+			</includes>
+			<lineEnding>unix</lineEnding>
+			<fileMode>0750</fileMode>
+		</fileSet>
+
+		<fileSet>
+			<directory>./src/main/resources/config</directory>
+			<includes>
+				<include>files-manager.properties</include>
+				<include>log4j.xml</include>
+			</includes>
+			<outputDirectory>config</outputDirectory>
+		</fileSet>
+
+		<fileSet>
+			<directory>./src/main/resources/report</directory>
+			<includes>
+				<include>css/*.*</include>
+				<include>fonts/*.*</include>
+				<include>js/*.*</include>
+				<include>images/*.*</include>
+			</includes>
+			<outputDirectory>resource</outputDirectory>
+		</fileSet>
+
+		<fileSet>
+			<directory>./</directory>
+			<outputDirectory>log</outputDirectory>
+			<excludes>
+				<exclude>*/**</exclude>
+			</excludes>
+		</fileSet>
+
+		<fileSet>
+			<directory>./</directory>
+			<outputDirectory>report</outputDirectory>
+			<excludes>
+				<exclude>*/**</exclude>
+			</excludes>
+		</fileSet>
+
+	</fileSets>
+
+	<dependencySets>
+
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<useStrictFiltering>true</useStrictFiltering>
+			<useTransitiveDependencies>true</useTransitiveDependencies>
+			<useProjectArtifact>false</useProjectArtifact>
+			<scope>runtime</scope>
+		</dependencySet>
+
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
+			<scope>provided</scope>
+		</dependencySet>
+
+	</dependencySets>
+
+</assembly>
